@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE63E87122E85C1200C337FC /* XibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE63E86F22E85C1200C337FC /* XibViewController.swift */; };
+		DE63E87222E85C1200C337FC /* XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE63E87022E85C1200C337FC /* XibViewController.xib */; };
+		DE63E87422E85C3100C337FC /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE63E87322E85C3100C337FC /* XibView.swift */; };
 		DE95BD6622E068EC00091551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95BD6522E068EC00091551 /* AppDelegate.swift */; };
 		DE95BD6822E068EC00091551 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95BD6722E068EC00091551 /* ViewController.swift */; };
 		DE95BD6B22E068EC00091551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE95BD6922E068EC00091551 /* Main.storyboard */; };
@@ -14,6 +17,8 @@
 		DE95BD7022E068EE00091551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE95BD6E22E068EE00091551 /* LaunchScreen.storyboard */; };
 		DE95BD7B22E068EE00091551 /* pictogramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95BD7A22E068EE00091551 /* pictogramTests.swift */; };
 		DE95BD8622E068EE00091551 /* pictogramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95BD8522E068EE00091551 /* pictogramUITests.swift */; };
+		DE95BD9422E06D6D00091551 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95BD9322E06D6D00091551 /* GameViewController.swift */; };
+		DE95BD9622E595FA00091551 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95BD9522E595FA00091551 /* SelectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE63E86F22E85C1200C337FC /* XibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewController.swift; sourceTree = "<group>"; };
+		DE63E87022E85C1200C337FC /* XibViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibViewController.xib; sourceTree = "<group>"; };
+		DE63E87322E85C3100C337FC /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		DE95BD6222E068EC00091551 /* pictogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE95BD6522E068EC00091551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE95BD6722E068EC00091551 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,8 @@
 		DE95BD8122E068EE00091551 /* pictogramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pictogramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE95BD8522E068EE00091551 /* pictogramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pictogramUITests.swift; sourceTree = "<group>"; };
 		DE95BD8722E068EE00091551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE95BD9322E06D6D00091551 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		DE95BD9522E595FA00091551 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +109,15 @@
 			children = (
 				DE95BD6522E068EC00091551 /* AppDelegate.swift */,
 				DE95BD6722E068EC00091551 /* ViewController.swift */,
+				DE95BD9522E595FA00091551 /* SelectViewController.swift */,
 				DE95BD6922E068EC00091551 /* Main.storyboard */,
+				DE63E86F22E85C1200C337FC /* XibViewController.swift */,
+				DE63E87322E85C3100C337FC /* XibView.swift */,
+				DE63E87022E85C1200C337FC /* XibViewController.xib */,
 				DE95BD6C22E068EE00091551 /* Assets.xcassets */,
 				DE95BD6E22E068EE00091551 /* LaunchScreen.storyboard */,
 				DE95BD7122E068EE00091551 /* Info.plist */,
+				DE95BD9322E06D6D00091551 /* GameViewController.swift */,
 			);
 			path = pictogram;
 			sourceTree = "<group>";
@@ -229,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE63E87222E85C1200C337FC /* XibViewController.xib in Resources */,
 				DE95BD7022E068EE00091551 /* LaunchScreen.storyboard in Resources */,
 				DE95BD6D22E068EE00091551 /* Assets.xcassets in Resources */,
 				DE95BD6B22E068EC00091551 /* Main.storyboard in Resources */,
@@ -256,7 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE63E87122E85C1200C337FC /* XibViewController.swift in Sources */,
+				DE95BD9622E595FA00091551 /* SelectViewController.swift in Sources */,
 				DE95BD6822E068EC00091551 /* ViewController.swift in Sources */,
+				DE95BD9422E06D6D00091551 /* GameViewController.swift in Sources */,
+				DE63E87422E85C3100C337FC /* XibView.swift in Sources */,
 				DE95BD6622E068EC00091551 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
