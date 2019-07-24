@@ -15,6 +15,13 @@ class GameViewController: UIViewController {
     var plates: Array<UIButton> = []
     var stack: UIStackView!
     
+    // оутлетs для GestureRecognizers
+    @IBOutlet var panGestureRecognizer: UIPanGestureRecognizer!
+    
+    @IBOutlet var rotateGestureRecognizer: UIRotationGestureRecognizer!
+    
+    @IBOutlet var pinchGestureRecognizer: UIPinchGestureRecognizer!
+    
     // фабрика кнопок - генерирует одинаковые кнопки
     private func generateButtons(numberOfButtons: Int) {
         var i = 0
@@ -48,7 +55,7 @@ class GameViewController: UIViewController {
         gradient.colors = [UIColor.white.cgColor, UIColor.black.cgColor]
         
         self.view.layer.insertSublayer(gradient, at: 0)
-        self.view.autoresizingMask = [.flexibleWidth, .flexibleRightMargin, .flexibleBottomMargin]
+        //self.view.autoresizingMask = [.flexibleWidth, .flexibleRightMargin, .flexibleBottomMargin]
         
         print("кол-во кнопок plates = \(plates.count)")
     
@@ -70,7 +77,7 @@ class GameViewController: UIViewController {
     
     @objc func buttonAction(sender: UIButton!) {
         let btnsendtag: UIButton = sender
-        let randomInt = Int.random(in: 0..<200)
+        let randomInt = Int.random(in: 0..<100)
         //let randomX = (self.view.bounds.width / 2) - randomInt
         //let randomY = self.view.bounds.height / 2
         if btnsendtag.tag == 1 {
@@ -81,6 +88,51 @@ class GameViewController: UIViewController {
             self.plates[0].frame = CGRect(x: self.view.bounds.width / 2 - 100, y: self.view.bounds.height / 2 - 200, width: 55, height: 55)
             }
     }
+    
+    //MARK: - Обработка жестов
+    // жест по тасканию по экрану
+    var initialCenter = CGPoint()  // The initial center point of the view.
+    @IBAction func panPiece(_ gestureRecognizer : UIPanGestureRecognizer) {
+        guard panGestureRecognizer.view != nil else {return}
+        let piece = panGestureRecognizer.view!
+        // Get the changes in the X and Y directions relative to
+        // the superview's coordinate space.
+        let translation = gestureRecognizer.translation(in: piece.superview)
+        if panGestureRecognizer.state == .began {
+            // Save the view's original position.
+            self.initialCenter = piece.center
+        }
+        // Update the position for the .began, .changed, and .ended states
+        if panGestureRecognizer.state != .cancelled {
+            // Add the X and Y translation to the view's original position.
+            let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
+            piece.center = newCenter
+        }
+        else {
+            // On cancellation, return the piece to its original location.
+            piece.center = initialCenter
+        }
+    }
+    
+    // при повороте жест
+    @IBAction func rotatePiece(_ gestureRecognizer : UIRotationGestureRecognizer) {   // Move the anchor point of the view's layer to the center of the
+        // user's two fingers. This creates a more natural looking rotation.
+        guard rotateGestureRecognizer.view != nil else { return }
+        
+        if rotateGestureRecognizer.state == .began || rotateGestureRecognizer.state == .changed {
+            rotateGestureRecognizer.view?.transform = rotateGestureRecognizer.view!.transform.rotated(by: rotateGestureRecognizer.rotation)
+            rotateGestureRecognizer.rotation = 0
+        }}
+    
+    // жест масштабирования
+    @IBAction func scalePiece(_ gestureRecognizer : UIPinchGestureRecognizer) {
+        guard pinchGestureRecognizer.view != nil else { return }
+        
+        if pinchGestureRecognizer.state == .began || pinchGestureRecognizer.state == .changed {
+            pinchGestureRecognizer.view?.transform = (pinchGestureRecognizer.view?.transform
+                .scaledBy(x: pinchGestureRecognizer.scale, y: pinchGestureRecognizer.scale))!
+            pinchGestureRecognizer.scale = 1.0
+        }}
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

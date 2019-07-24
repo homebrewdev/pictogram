@@ -18,6 +18,7 @@ class SelectViewController: UIViewController {
     
     let userDefaultsBase = UserDefaults.standard
     
+    // view did load
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.tapBtn.frame = CGRect(x: self.view.bounds.width / 2 - 50, y: self.view.bounds.height / 2 - 50, width: 100, height: 100)
@@ -28,6 +29,11 @@ class SelectViewController: UIViewController {
 
         print("Ширина View: \(width)")
         print("Высота View: \(height)")
+        
+        // добавляем жест рекогнайзер
+        let recognizer = UILongPressGestureRecognizer()
+        recognizer.addTarget(self, action: #selector(handleLongPressGesture(_:)))
+        view.addGestureRecognizer(recognizer)
 
     }
     
@@ -51,7 +57,7 @@ class SelectViewController: UIViewController {
 
     // при нажатии кнопки "OK"
     // передадим количество создаваемых кнопок в GameViewController
-    @IBAction func pushToOKButton(_ sender: Any) {
+    @IBAction func pushToOKButton(_ sender: UIButton) {
         let numberOfBtn = Int(numberOfButtonsTextField?.text ?? "1")
 
         print("Buttons \(String(describing: numberOfBtn))")
@@ -61,10 +67,10 @@ class SelectViewController: UIViewController {
 
     }
 
-
-    @IBAction func pushXibButton(_ sender: UIButton) {
-
+    @objc func handleLongPressGesture(_ gestureRecognizer: UILongPressGestureRecognizer) {
+        numberOfButtonsTextField.text = "10"
     }
+    
 
     @IBOutlet weak var selectView: UIView!
 

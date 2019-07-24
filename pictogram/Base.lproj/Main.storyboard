@@ -53,19 +53,45 @@
             <point key="canvasLocation" x="384.05797101449281" y="6.6964285714285712"/>
         </scene>
         <!--Game View Controller-->
-        <scene sceneID="zwX-C8-QDw">
+        <scene sceneID="g1I-U5-Va5">
             <objects>
-                <viewController id="HXx-qa-pht" customClass="GameViewController" customModule="pictogram" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sbt-Qc-omE">
+                <viewController id="voU-G4-6S3" customClass="GameViewController" customModule="pictogram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w70-fN-rGg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1YG-GF-DKo"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="j9C-Xb-Y86"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="10m-iT-E8a" appends="YES" id="dW8-yD-HOK"/>
+                            <outletCollection property="gestureRecognizers" destination="yOv-aa-WA8" appends="YES" id="Ea5-fs-8Ng"/>
+                            <outletCollection property="gestureRecognizers" destination="RxS-OT-cQH" appends="YES" id="kEN-hg-S99"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="panGestureRecognizer" destination="10m-iT-E8a" id="ywN-W8-abD"/>
+                        <outlet property="pinchGestureRecognizer" destination="RxS-OT-cQH" id="9mp-gn-v3h"/>
+                        <outlet property="rotateGestureRecognizer" destination="yOv-aa-WA8" id="L8T-Uz-sut"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="73N-E3-e4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJ6-We-urO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="10m-iT-E8a">
+                    <connections>
+                        <action selector="panPiece:" destination="voU-G4-6S3" id="y0P-tV-Hd7"/>
+                    </connections>
+                </panGestureRecognizer>
+                <rotationGestureRecognizer id="yOv-aa-WA8">
+                    <connections>
+                        <action selector="rotatePiece:" destination="voU-G4-6S3" id="OjO-a7-L71"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pinchGestureRecognizer id="RxS-OT-cQH">
+                    <connections>
+                        <action selector="scalePiece:" destination="voU-G4-6S3" id="3Lj-fk-BDI"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2394" y="-288"/>
+            <point key="canvasLocation" x="2328" y="-1007"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Eyl-ue-ZGi">
@@ -138,7 +164,7 @@
                                         <state key="normal" title="OK"/>
                                         <connections>
                                             <action selector="pushToOKButton:" destination="gOn-pK-r4w" eventType="touchUpInside" id="YD6-Rd-n2W"/>
-                                            <segue destination="HXx-qa-pht" kind="show" id="PLM-K9-fJS"/>
+                                            <segue destination="voU-G4-6S3" kind="show" id="twV-sz-azh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhY-NR-LTN">

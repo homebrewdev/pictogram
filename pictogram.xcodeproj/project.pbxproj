@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE63E87122E85C1200C337FC /* XibViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE63E86F22E85C1200C337FC /* XibViewController.swift */; };
 		DE63E87222E85C1200C337FC /* XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE63E87022E85C1200C337FC /* XibViewController.xib */; };
-		DE63E87422E85C3100C337FC /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE63E87322E85C3100C337FC /* XibView.swift */; };
+		DE63E87622E8743A00C337FC /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE63E87522E8743A00C337FC /* XibView.swift */; };
 		DE95BD6622E068EC00091551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95BD6522E068EC00091551 /* AppDelegate.swift */; };
 		DE95BD6822E068EC00091551 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE95BD6722E068EC00091551 /* ViewController.swift */; };
 		DE95BD6B22E068EC00091551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE95BD6922E068EC00091551 /* Main.storyboard */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		DE63E86F22E85C1200C337FC /* XibViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibViewController.swift; sourceTree = "<group>"; };
 		DE63E87022E85C1200C337FC /* XibViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibViewController.xib; sourceTree = "<group>"; };
-		DE63E87322E85C3100C337FC /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		DE63E87522E8743A00C337FC /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		DE95BD6222E068EC00091551 /* pictogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pictogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE95BD6522E068EC00091551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE95BD6722E068EC00091551 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,8 +112,8 @@
 				DE95BD9522E595FA00091551 /* SelectViewController.swift */,
 				DE95BD6922E068EC00091551 /* Main.storyboard */,
 				DE63E86F22E85C1200C337FC /* XibViewController.swift */,
-				DE63E87322E85C3100C337FC /* XibView.swift */,
 				DE63E87022E85C1200C337FC /* XibViewController.xib */,
+				DE63E87522E8743A00C337FC /* XibView.swift */,
 				DE95BD6C22E068EE00091551 /* Assets.xcassets */,
 				DE95BD6E22E068EE00091551 /* LaunchScreen.storyboard */,
 				DE95BD7122E068EE00091551 /* Info.plist */,
@@ -276,7 +276,7 @@
 				DE95BD9622E595FA00091551 /* SelectViewController.swift in Sources */,
 				DE95BD6822E068EC00091551 /* ViewController.swift in Sources */,
 				DE95BD9422E06D6D00091551 /* GameViewController.swift in Sources */,
-				DE63E87422E85C3100C337FC /* XibView.swift in Sources */,
+				DE63E87622E8743A00C337FC /* XibView.swift in Sources */,
 				DE95BD6622E068EC00091551 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
