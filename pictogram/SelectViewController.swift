@@ -9,28 +9,21 @@
 import UIKit
 
 class SelectViewController: UIViewController {
-   // var tapBtn: UIButton = {
-   //     let btn = UIButton()
-   //     btn.setTitle("Tap", for: .normal)
-   //     btn.setTitleColor(UIColor.red, for: .normal)
-   //     return btn
-   // }()
     
+    // инициируем user defaults
     let userDefaultsBase = UserDefaults.standard
     
     // view did load
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tapBtn.frame = CGRect(x: self.view.bounds.width / 2 - 50, y: self.view.bounds.height / 2 - 50, width: 100, height: 100)
-        //self.view.addSubview(self.tapBtn)
-        //self.view.backgroundColor = UIColor.white
+        
         let width = Int(selectView.bounds.width) // ширина
         let height = Int(selectView.bounds.height)
 
         print("Ширина View: \(width)")
         print("Высота View: \(height)")
         
-        // добавляем жест рекогнайзер
+        // добавляем жест рекогнайзер долгое нажатие на экран
         let recognizer = UILongPressGestureRecognizer()
         recognizer.addTarget(self, action: #selector(handleLongPressGesture(_:)))
         view.addGestureRecognizer(recognizer)
@@ -51,8 +44,6 @@ class SelectViewController: UIViewController {
 
         selectView.transform = scale // меняем масштаб
         selectView.transform = rotation // вращаем
-        //selectView.backgroundColor = UIColor.lightGray // делаем чтобы вью стала серой
-
     }
 
     // при нажатии кнопки "OK"
@@ -67,11 +58,12 @@ class SelectViewController: UIViewController {
 
     }
 
+    // обработка активациижеста долгого нажатия
     @objc func handleLongPressGesture(_ gestureRecognizer: UILongPressGestureRecognizer) {
         numberOfButtonsTextField.text = "10"
     }
     
-
+    //MARK: - аутлеты
     @IBOutlet weak var selectView: UIView!
 
     @IBOutlet weak var numberOfButtonsTextField: UITextField!
@@ -97,6 +89,7 @@ class SelectViewController: UIViewController {
         }
     }
 
+    // MARK: - Создание интерфейса
     func createUI() {
         // заливаем вью градиентом
         let gradient = CAGradientLayer()
@@ -107,9 +100,10 @@ class SelectViewController: UIViewController {
         self.view.layer.insertSublayer(gradient, at: 0)
         self.view.autoresizingMask = [.flexibleWidth, .flexibleLeftMargin, .flexibleRightMargin]
     }
-
+    
+    //  если границы view меняются
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        self.createUI()
+        //self.createUI()
     }
 }
